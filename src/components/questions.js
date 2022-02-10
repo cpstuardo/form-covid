@@ -7,7 +7,7 @@ import Box from "@mui/material/Box";
 import { text } from "../data/text";
 import "../App.css";
 
-const Questions = ({ formik }) => {
+const Questions = ({ formik, handleFirst }) => {
   return (
     <Fragment>
       <Grid container spacing={3} alignItems="center" justifyContent="center">
@@ -20,7 +20,10 @@ const Questions = ({ formik }) => {
               fullWidth
               select
               id="age"
-              onChange={formik.handleChange("age")}
+              onChange={(e) => {
+                formik.setFieldValue("age", e.target.value);
+                handleFirst(e.target.value);
+              }}
               value={formik.values.age}
               variant="standard"
               margin="dense"

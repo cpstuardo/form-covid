@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { Fragment, useState, useEffect } from "react";
+import React, { Fragment, useState, useEffect, useMemo } from "react";
 import { useFormik } from "formik";
 import Questions from "./components/questions";
 import Results from "./components/results";
@@ -17,35 +17,22 @@ function App() {
   const [latitude, setLatitude] = useState("");
   const [longitude, setLongitude] = useState("");
   const [showResult, setShowResult] = useState(false);
-  let date = new Date();
-  let strTime = date.toLocaleString("en-US", {
-    timeZone: "Chile/Continental",
-  });
+  const strTime = useMemo(() => {
+    let date = new Date();
+    return date.toLocaleString("en-US", {
+      timeZone: "Chile/Continental",
+    });
+  }, [showResult]);
+
   const formik = useFormik({
+    enableReinitialize: true,
     initialValues: {
       age: "",
       vaccine: "",
     },
     onSubmit: async (values) => {
+      handleSecond();
       setShowResult(true);
-      const requestOptions = {
-        method: "POST",
-        mode: "cors",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          IP: ip,
-          timestamp: strTime,
-          country,
-          city,
-          latitude,
-          longitude,
-          age: values.age,
-          vaccine: values.vaccine,
-        }),
-      };
-      await fetch(connectionURL, requestOptions);
     },
   });
 
@@ -64,13 +51,50 @@ function App() {
       });
   }, []);
 
+  const handleFirst = (value) => {
+    const requestOptions = {
+      method: "POST",
+      mode: "cors",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        IP: ip,
+        timestamp: strTime,
+        country,
+        city,
+        latitude,
+        longitude,
+        age: value,
+      }),
+    };
+    fetch(connectionURL, requestOptions);
+  };
+
+  const handleSecond = () => {
+    const requestOptions = {
+      method: "PATCH",
+      mode: "cors",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        vaccine: formik.values.vaccine,
+      }),
+    };
+    fetch(
+      connectionURL + `/search?IP=*${ip}*&timestamp=*${strTime}*`,
+      requestOptions
+    );
+  };
+
   return (
     <div className="App">
       <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
         <Paper elevation={0} sx={{ my: { xs: 2, md: 2 }, p: { xs: 2, md: 3 } }}>
           <h1>Formulario COVID-19</h1>
           <Fragment>
-            <Questions formik={formik} />
+            <Questions formik={formik} handleFirst={handleFirst} />
             {showResult ? (
               <div className="results">
                 <Results
