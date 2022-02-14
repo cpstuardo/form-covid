@@ -1,47 +1,47 @@
 {
     "12 - 20 a\u00f1os": {
-        "con dosis refuerzo > 14 dias": 12669.0,
-        "con esquema completo": 1827.0,
-        "sin esquema completo": 641.0
+        "con dosis refuerzo > 14 dias": 11896.0,
+        "con esquema completo": 1483.0,
+        "sin esquema completo": 511.0
     },
     "21 - 30 a\u00f1os": {
-        "con dosis refuerzo > 14 dias": 5000.0,
-        "con esquema completo": 723.0,
-        "sin esquema completo": 455.0
+        "con dosis refuerzo > 14 dias": 4382.0,
+        "con esquema completo": 611.0,
+        "sin esquema completo": 382.0
     },
     "31 - 40 a\u00f1os": {
-        "con dosis refuerzo > 14 dias": 4959.0,
-        "con esquema completo": 787.0,
-        "sin esquema completo": 509.0
+        "con dosis refuerzo > 14 dias": 4396.0,
+        "con esquema completo": 659.0,
+        "sin esquema completo": 440.0
     },
     "41 - 50 a\u00f1os": {
-        "con dosis refuerzo > 14 dias": 6425.0,
-        "con esquema completo": 890.0,
-        "sin esquema completo": 666.0
+        "con dosis refuerzo > 14 dias": 5764.0,
+        "con esquema completo": 735.0,
+        "sin esquema completo": 590.0
     },
     "51 - 60 a\u00f1os": {
-        "con dosis refuerzo > 14 dias": 5556.0,
-        "con esquema completo": 939.0,
-        "sin esquema completo": 282.0
+        "con dosis refuerzo > 14 dias": 4424.0,
+        "con esquema completo": 758.0,
+        "sin esquema completo": 254.0
     },
     "61 - 70 a\u00f1os": {
-        "con dosis refuerzo > 14 dias": 7290.0,
-        "con esquema completo": 970.0,
-        "sin esquema completo": 864.0
+        "con dosis refuerzo > 14 dias": 4288.0,
+        "con esquema completo": 790.0,
+        "sin esquema completo": 836.0
     },
     "71 - 80 a\u00f1os": {
-        "con dosis refuerzo > 14 dias": 12343.0,
-        "con esquema completo": 1054.0,
-        "sin esquema completo": 586.0
+        "con dosis refuerzo > 14 dias": 5309.0,
+        "con esquema completo": 898.0,
+        "sin esquema completo": 593.0
     },
     "80 a\u00f1os o m\u00e1s": {
-        "con dosis refuerzo > 14 dias": 13154.0,
-        "con esquema completo": 1156.0,
-        "sin esquema completo": 1091.0
+        "con dosis refuerzo > 14 dias": 4503.0,
+        "con esquema completo": 975.0,
+        "sin esquema completo": 1057.0
     },
     "Total": {
-        "con dosis refuerzo > 14 dias": 5126.0,
-        "con esquema completo": 1039.0,
-        "sin esquema completo": 661.0
+        "con dosis refuerzo > 14 dias": 4011.0,
+        "con esquema completo": 885.0,
+        "sin esquema completo": 555.0
     }
 }

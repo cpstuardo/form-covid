@@ -1,8 +1,9 @@
 import pandas as pd
 import numpy as np
 import requests
-
+import datetime
 import json
+import pytz
 
 # Recuperar los datos del Min Ciencia
 url = "https://raw.githubusercontent.com/MinCiencia/Datos-COVID19/master/output/producto89/incidencia_en_vacunados_edad.csv"
@@ -36,3 +37,23 @@ for k in df12.keys():
 
 with open(f"../src/data/data.json", "w") as file:
     json.dump(dict_casos, file, indent=4)
+
+
+# Última semana epidemiológica
+ultima = df.semana_epidemiologica.unique()[-1:][0]
+dataTime = {
+    "week": ultima[-2:],
+    "year": ultima[:4],
+}
+with open(f"../src/data/ultima_sem_epi.json", "w") as file:
+    json.dump(dataTime, file, indent=4)
+
+# Última actualización
+country_time_zone = pytz.timezone("Chile/Continental")
+country_time = datetime.datetime.now(country_time_zone)
+string_date = country_time.strftime("%d-%m-%y %H:%M")
+dataTime = {
+    "datetime": string_date
+} 
+with open(f"../src/data/ultima_actualizacion.json", "w") as file:
+    json.dump(dataTime, file, indent=4)

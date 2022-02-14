@@ -6,6 +6,7 @@ import Results from "./components/results";
 import Container from "@mui/material/Container";
 import Paper from "@mui/material/Paper";
 import Button from "@mui/material/Button";
+import BottomText from "./components/bottomText";
 
 const connectionURL =
   "https://sheet.best/api/sheets/3932d4f5-7a72-4a3e-844a-6cbf3d4993b0";
@@ -17,12 +18,6 @@ function App() {
   const [latitude, setLatitude] = useState("");
   const [longitude, setLongitude] = useState("");
   const [showResult, setShowResult] = useState(false);
-  const strTime = useMemo(() => {
-    let date = new Date();
-    return date.toLocaleString("en-US", {
-      timeZone: "Chile/Continental",
-    });
-  }, [showResult]);
 
   const formik = useFormik({
     enableReinitialize: true,
@@ -30,11 +25,14 @@ function App() {
       age: "",
       vaccine: "",
     },
-    onSubmit: async (values) => {
-      handleSecond();
-      setShowResult(true);
-    },
   });
+
+  const strTime = useMemo(() => {
+    let date = new Date();
+    return date.toLocaleString("en-US", {
+      timeZone: "Chile/Continental",
+    });
+  }, [formik.values.vaccine]);
 
   useEffect(() => {
     const requestOptions = {
@@ -51,7 +49,7 @@ function App() {
       });
   }, []);
 
-  const handleFirst = (value) => {
+  const handleFirst = (valueAge, valueVaccine) => {
     const requestOptions = {
       method: "POST",
       mode: "cors",
@@ -65,13 +63,14 @@ function App() {
         city,
         latitude,
         longitude,
-        age: value,
+        age: valueAge,
+        vaccine: valueVaccine,
       }),
     };
     fetch(connectionURL, requestOptions);
   };
 
-  const handleSecond = () => {
+  const handleSecond = (value) => {
     const requestOptions = {
       method: "PATCH",
       mode: "cors",
@@ -79,23 +78,37 @@ function App() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        vaccine: formik.values.vaccine,
+        vaccine: value,
       }),
     };
     fetch(
       connectionURL + `/search?IP=*${ip}*&timestamp=*${strTime}*`,
       requestOptions
-    );
+    )
+      .then((r) => r.json())
+      .then((data) => {
+        // Si actualizó el segundo sin haber cambiado el primero
+        if (data.length === 0) {
+          handleFirst(formik.values.age, value);
+        }
+      });
+
+    // If no lo pilla, manda uno nuevo completo
   };
 
   return (
     <div className="App">
       <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
-        <Paper elevation={0} sx={{ my: { xs: 2, md: 2 }, p: { xs: 2, md: 3 } }}>
+        <Paper elevation={0} sx={{ my: { xs: 1, md: 0 }, p: { xs: 2, md: 1 } }}>
           <h1>Formulario COVID-19</h1>
           <Fragment>
-            <Questions formik={formik} handleFirst={handleFirst} />
-            {showResult ? (
+            <Questions
+              formik={formik}
+              handleFirst={handleFirst}
+              handleSecond={handleSecond}
+              setShowResult={setShowResult}
+            />
+            {showResult && (
               <div className="results">
                 <Results
                   age={formik.values.age}
@@ -108,7 +121,7 @@ function App() {
                     fontFamily: "Montserrat",
                     fontWeight: "bold",
                     color: "#45b39d",
-                    marginTop: -30,
+                    marginTop: -35,
                   }}
                   onClick={() => {
                     setShowResult(false);
@@ -117,9 +130,8 @@ function App() {
                 >
                   Reiniciar
                 </Button>
+                <BottomText />
               </div>
-            ) : (
-              <div />
             )}
           </Fragment>
         </Paper>

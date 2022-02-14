@@ -15,11 +15,28 @@ p {
 }
 
 .results {
-  margin-top: -0.3cm;
+  margin-top: -0.4cm;
 }
 
 .dispnon {
   display: none;
+}
+
+.asterisk {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.35cm;
+}
+
+.bottom-text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.35cm;
+  color: #7e7e7e;
+}
+
+.link {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.35cm;
+  color: #7e7e7e;
 }
 
 @media (max-width: 600px) {
