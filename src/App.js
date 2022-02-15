@@ -92,8 +92,6 @@ function App() {
           handleFirst(formik.values.age, value);
         }
       });
-
-    // If no lo pilla, manda uno nuevo completo
   };
 
   return (
