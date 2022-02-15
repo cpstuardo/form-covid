@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/form-covid/static/css/main.868cdd70.css",
-    "main.js": "/form-covid/static/js/main.5a2c2b9f.js",
+    "main.js": "/form-covid/static/js/main.cc70caa9.js",
     "static/js/787.3269600a.chunk.js": "/form-covid/static/js/787.3269600a.chunk.js",
     "index.html": "/form-covid/index.html",
     "main.868cdd70.css.map": "/form-covid/static/css/main.868cdd70.css.map",
-    "main.5a2c2b9f.js.map": "/form-covid/static/js/main.5a2c2b9f.js.map",
+    "main.cc70caa9.js.map": "/form-covid/static/js/main.cc70caa9.js.map",
     "787.3269600a.chunk.js.map": "/form-covid/static/js/787.3269600a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.868cdd70.css",
-    "static/js/main.5a2c2b9f.js"
+    "static/js/main.cc70caa9.js"
   ]
 }
