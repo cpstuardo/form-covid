@@ -119,7 +119,7 @@ function App() {
                     fontFamily: "Montserrat",
                     fontWeight: "bold",
                     color: "#45b39d",
-                    marginTop: -35,
+                    marginTop: 0,
                   }}
                   onClick={() => {
                     setShowResult(false);

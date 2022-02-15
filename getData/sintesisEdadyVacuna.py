@@ -4,6 +4,7 @@ import requests
 import datetime
 import json
 import pytz
+import math
 
 # Recuperar los datos del Min Ciencia
 url = "https://raw.githubusercontent.com/MinCiencia/Datos-COVID19/master/output/producto89/incidencia_en_vacunados_edad.csv"
@@ -27,17 +28,22 @@ df12["p_casos_confirmados"] = df12["p_casos_confirmados"]
 df12["p_casos_uci"] = df12["p_casos_uci"]
 df12["p_casos_def"] = df12["p_casos_def"]
 
-df12 = df12.groupby(["grupo_edad", "estado_vacunacion"]).mean()["p_casos_confirmados"].to_dict()
+df12 = df12.groupby(["grupo_edad", "estado_vacunacion"]).mean()[["p_casos_confirmados", "p_casos_uci", "p_casos_def"]].to_dict()
 
 dict_casos={}
-for k in df12.keys():
-    if not(k[0] in dict_casos.keys()):
-        dict_casos[k[0]] = {}
-    dict_casos[k[0]][k[1]] = round(df12[k],0)
+for j in df12.keys():
+    dict_casos[j] = {}
+    for k in df12[j].keys():
+        if not(k[0] in dict_casos[j].keys()):
+            dict_casos[j][k[0]] = {}
+        if math.isnan(df12[j][k]): 
+            dict_casos[j][k[0]][k[1]] = "NaN"
+        else:
+            dict_casos[j][k[0]][k[1]] = round(df12[j][k],0)
+
 
 with open(f"../src/data/data.json", "w") as file:
     json.dump(dict_casos, file, indent=4)
-
 
 # Última semana epidemiológica
 ultima = df.semana_epidemiologica.unique()[-1:][0]
