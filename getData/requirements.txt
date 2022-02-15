@@ -3,4 +3,3 @@ numpy
 requests
 datetime
 pytz
-math
