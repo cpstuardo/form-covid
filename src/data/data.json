@@ -1,49 +1,49 @@
 {
     "p_casos_confirmados": {
         "12 - 20 a\u00f1os": {
-            "con dosis refuerzo > 14 dias": 628.0,
-            "con esquema completo": 568.0,
-            "sin esquema completo": 391.0
+            "con dosis refuerzo > 14 dias": 626.0,
+            "con esquema completo": 576.0,
+            "sin esquema completo": 393.0
         },
         "21 - 30 a\u00f1os": {
-            "con dosis refuerzo > 14 dias": 556.0,
-            "con esquema completo": 1313.0,
-            "sin esquema completo": 625.0
+            "con dosis refuerzo > 14 dias": 557.0,
+            "con esquema completo": 1327.0,
+            "sin esquema completo": 623.0
         },
         "31 - 40 a\u00f1os": {
-            "con dosis refuerzo > 14 dias": 529.0,
-            "con esquema completo": 1173.0,
-            "sin esquema completo": 1112.0
+            "con dosis refuerzo > 14 dias": 532.0,
+            "con esquema completo": 1184.0,
+            "sin esquema completo": 1113.0
         },
         "41 - 50 a\u00f1os": {
-            "con dosis refuerzo > 14 dias": 589.0,
-            "con esquema completo": 1204.0,
-            "sin esquema completo": 1401.0
+            "con dosis refuerzo > 14 dias": 591.0,
+            "con esquema completo": 1213.0,
+            "sin esquema completo": 1405.0
         },
         "51 - 60 a\u00f1os": {
-            "con dosis refuerzo > 14 dias": 766.0,
-            "con esquema completo": 1473.0,
-            "sin esquema completo": 553.0
+            "con dosis refuerzo > 14 dias": 768.0,
+            "con esquema completo": 1488.0,
+            "sin esquema completo": 556.0
         },
         "61 - 70 a\u00f1os": {
-            "con dosis refuerzo > 14 dias": 1056.0,
-            "con esquema completo": 1518.0,
-            "sin esquema completo": 2387.0
+            "con dosis refuerzo > 14 dias": 1057.0,
+            "con esquema completo": 1536.0,
+            "sin esquema completo": 2417.0
         },
         "71 - 80 a\u00f1os": {
-            "con dosis refuerzo > 14 dias": 1229.0,
-            "con esquema completo": 1995.0,
-            "sin esquema completo": 2006.0
+            "con dosis refuerzo > 14 dias": 1221.0,
+            "con esquema completo": 2018.0,
+            "sin esquema completo": 2041.0
         },
         "80 a\u00f1os o m\u00e1s": {
-            "con dosis refuerzo > 14 dias": 1037.0,
-            "con esquema completo": 1506.0,
-            "sin esquema completo": 2044.0
+            "con dosis refuerzo > 14 dias": 1033.0,
+            "con esquema completo": 1538.0,
+            "sin esquema completo": 2082.0
         },
         "Total": {
-            "con dosis refuerzo > 14 dias": 671.0,
-            "con esquema completo": 897.0,
-            "sin esquema completo": 1012.0
+            "con dosis refuerzo > 14 dias": 673.0,
+            "con esquema completo": 911.0,
+            "sin esquema completo": 1020.0
         }
     },
     "p_casos_uci": {
@@ -73,24 +73,24 @@
             "sin esquema completo": "NaN"
         },
         "61 - 70 a\u00f1os": {
-            "con dosis refuerzo > 14 dias": 293967.0,
+            "con dosis refuerzo > 14 dias": 306847.0,
             "con esquema completo": "NaN",
             "sin esquema completo": "NaN"
         },
         "71 - 80 a\u00f1os": {
-            "con dosis refuerzo > 14 dias": 160038.0,
+            "con dosis refuerzo > 14 dias": 161025.0,
             "con esquema completo": "NaN",
             "sin esquema completo": "NaN"
         },
         "80 a\u00f1os o m\u00e1s": {
-            "con dosis refuerzo > 14 dias": 142893.0,
+            "con dosis refuerzo > 14 dias": 144301.0,
             "con esquema completo": "NaN",
             "sin esquema completo": "NaN"
         },
         "Total": {
-            "con dosis refuerzo > 14 dias": 605426.0,
-            "con esquema completo": 615022.0,
-            "sin esquema completo": 243882.0
+            "con dosis refuerzo > 14 dias": 620839.0,
+            "con esquema completo": 631452.0,
+            "sin esquema completo": 254748.0
         }
     },
     "p_casos_def": {
@@ -120,24 +120,24 @@
             "sin esquema completo": "NaN"
         },
         "61 - 70 a\u00f1os": {
-            "con dosis refuerzo > 14 dias": 238397.0,
+            "con dosis refuerzo > 14 dias": 266042.0,
             "con esquema completo": "NaN",
-            "sin esquema completo": 77203.0
+            "sin esquema completo": 81517.0
         },
         "71 - 80 a\u00f1os": {
-            "con dosis refuerzo > 14 dias": 76384.0,
+            "con dosis refuerzo > 14 dias": 79706.0,
             "con esquema completo": "NaN",
             "sin esquema completo": "NaN"
         },
         "80 a\u00f1os o m\u00e1s": {
-            "con dosis refuerzo > 14 dias": 18961.0,
-            "con esquema completo": 10331.0,
-            "sin esquema completo": 9688.0
+            "con dosis refuerzo > 14 dias": 20481.0,
+            "con esquema completo": 10574.0,
+            "sin esquema completo": 10379.0
         },
         "Total": {
-            "con dosis refuerzo > 14 dias": 314680.0,
-            "con esquema completo": 255013.0,
-            "sin esquema completo": 73875.0
+            "con dosis refuerzo > 14 dias": 337725.0,
+            "con esquema completo": 265340.0,
+            "sin esquema completo": 80179.0
         }
     }
 }
